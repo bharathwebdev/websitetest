@@ -4,7 +4,7 @@ import saveethalogo from "../assets/logo.png";
 import dresteinLogo from "../assets/dresteinLogo.svg";
 import Mobilenav from "./Mobilenav";
 import "../styles/HambBurger.css";
-<<<<<<< HEAD
+
 const Navbar = styled.nav`
     display: flex;
     justify-content: space-around;
@@ -14,30 +14,10 @@ const Navbar = styled.nav`
   /* height:200px; */
     width: 100%;
       /* overflow: auto; */
-=======
->>>>>>> 67405dc5ae3eed6701c9778d1907b0aba6282c67
-
-const Navbar = styled.nav`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1rem 0 0 1rem;
-  width: 100%;
- @media screen and (max-width:600px) {
-<<<<<<< HEAD
-    /* display: flex; */
-         display: block;
-         /* gap: 20px; */
-         /* padding-left: 0; */
 
 
- } 
-=======
-    flex-direction: column;
-    gap: 20px;
-    padding-left: 0;
-  } 
->>>>>>> 67405dc5ae3eed6701c9778d1907b0aba6282c67
+
+
 `;
 
 const SLogo = styled.img`
@@ -130,7 +110,7 @@ const NavItem = styled.a`
   cursor: pointer;
   text-decoration: none;
 `;
-<<<<<<< HEAD
+
 const MobileNavHeader = styled.div`
     display: flex;
     justify-content: center;
@@ -143,17 +123,7 @@ const MobileNavHeader = styled.div`
           position: sticky;
           top: 0;
     }
-=======
->>>>>>> 67405dc5ae3eed6701c9778d1907b0aba6282c67
-
-const MobileNavHeader = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  align-self: flex-start;
-`;
+`
 
 function Nav() {
   // const navstyle ={
@@ -161,7 +131,7 @@ function Nav() {
   //       top: "-80px",
   //     },
   // }
-  }
+
   const [colorChange, setColorchange] = useState(false);
   const changeNavbarColor = () => {
     if (window.scrollY > 30) {
@@ -173,7 +143,7 @@ function Nav() {
   window.addEventListener("scroll", changeNavbarColor);
 
   return (
-<<<<<<< HEAD
+
     // <nav style={{ position: "sticky", top: "0" }}>
     <Navbar
       className={colorChange ? "navbar colorChange" : "navbar"}
@@ -190,19 +160,7 @@ function Nav() {
 
 
       <MobileNavHeader       style={{ position: "sticky", top: "0" }}>
-=======
-    <Navbar className="navbar" 
-    // style ={navstyle}
-    >
-      <SLogo src={saveethalogo} />
-      <NavHead>
-        <NavItem href="#">Home</NavItem>
-        <NavItem href="#Departments">Departments</NavItem>
-        <NavItem href="#Gallery">Gallery</NavItem>
-        <NavItem href="#About">About</NavItem>
-      </NavHead>
-      <MobileNavHeader>
->>>>>>> 67405dc5ae3eed6701c9778d1907b0aba6282c67
+
         <Mobilenav />
         <LogoHead>
           <DLogo src={dresteinLogo} alt="DresteinLogo" />
@@ -212,11 +170,10 @@ function Nav() {
           </EventLogo>
         </LogoHead>
       </MobileNavHeader>
-<<<<<<< HEAD
+
       {/* </Navcontainer> */}
       </div>
-=======
->>>>>>> 67405dc5ae3eed6701c9778d1907b0aba6282c67
+
     </Navbar>
   );
 }
