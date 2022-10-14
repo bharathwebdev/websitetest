@@ -35,16 +35,15 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
-
-  const navigate = useNavigate();
+  const auth = getAuth()
   const {loggedIn , setLoggedIn} = useContext(UserContext)
-  useEffect(()=>{
-    const auth = getAuth()
-    if(auth.currentUser){
+  const navigate = useNavigate()
+  if(auth.currentUser){
+    navigate('/Admin')
+        }
 
-    //  navigate('/')
-    }
- },[])
+ 
+ 
   const handleSubmit = async(event) => {
     event.preventDefault();
     try{
@@ -67,6 +66,7 @@ export default function SignIn() {
     
 
   };
+  console.log(loggedIn)
 
   return (
     <ThemeProvider theme={theme}>

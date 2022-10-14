@@ -14,8 +14,9 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { getAuth } from 'firebase/auth';
 import { useNavigate } from 'react-router';
-
-const pages = ['Products', 'Pricing', 'Blog'];
+import { Link } from 'react-router-dom';
+import { uuidv4 } from '@firebase/util';
+const pages = ['scanusers', 'paid', 'unpaid'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
@@ -100,8 +101,8 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={uuidv4()} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center"><Link to={`${page}`} >{page}</Link></Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -127,13 +128,14 @@ const ResponsiveAppBar = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
+              <Link to={page} key={uuidv4()}>
               <Button
-                key={page}
+               
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
-              </Button>
+              </Button> </Link>
             ))}
           </Box>
 
@@ -159,8 +161,9 @@ const ResponsiveAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
+
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <MenuItem key={uuidv4()} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}

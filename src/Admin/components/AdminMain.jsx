@@ -4,7 +4,14 @@ import { useNavigate } from 'react-router'
 import ResponsiveAppBar from './AdminNav'
 import { useState } from 'react'
 import AdminPannel from './AdminPannel'
+import { Outlet } from 'react-router'
+import styled from 'styled-components'
 
+const Admin = styled.div`
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+`
 function AdminMain() {
   const auth = getAuth()
   const navigate = useNavigate()
@@ -18,10 +25,10 @@ function AdminMain() {
   email:auth?.currentUser?.email
   })
   return (
-    <div>
+    <Admin>
       <ResponsiveAppBar/>
-      <AdminPannel/>
-    </div>
+      <Outlet/>
+    </Admin>
   )
 }
 
