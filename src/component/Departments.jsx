@@ -4,7 +4,7 @@ import DepartMentCard from "./DepartMentCard";
 import { departobj } from "../configsFiles/Departments.config";
 import "../styles/Departments.css";
 import { motion } from "framer-motion";
-
+import { uuidv4 } from "@firebase/util";
 const DepartmentContainer = styled.div`
   width: 100vw;
   margin: 0 auto;
@@ -42,7 +42,7 @@ function Departments() {
         {departobj.map((data, i) => {
           return (
             <DepartMentCard
-              key={i}
+              key={uuidv4()}
               // style={{ border: "2px solid white" }}
               {...data}
             />

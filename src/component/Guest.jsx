@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { motion, varients } from "framer-motion";
-
+import { uuidv4 } from "@firebase/util";
 const GuestHead = styled.div`
 padding-bottom: 100px;
 position: relative;
@@ -154,6 +154,7 @@ function Guest() {
         {Guests.map((data) => {
           return (
             <GuestImageDiv
+            key={uuidv4()}
               as={motion.div}
               initial="offscreen"
               whileInView="onscreen"
@@ -161,6 +162,7 @@ function Guest() {
               transition={{
                 staggerChildren: 0.5,
               }}
+
             >
               <GuestImg as={motion.img} variants={text} src={data.src} />
               <GuestName

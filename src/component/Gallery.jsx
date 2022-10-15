@@ -73,7 +73,7 @@ import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion, Variants } from "framer-motion";
-
+import { uuidv4 } from "@firebase/util";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -159,7 +159,7 @@ export default function App() {
         >
           {Images.map((data) => {
             return (
-              <SwiperSlide style={{}}>
+              <SwiperSlide key={uuidv4()}>
                 <SlideImg>
                   <img src={data} />
                   <Innertext>view more</Innertext>

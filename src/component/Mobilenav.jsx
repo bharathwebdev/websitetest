@@ -12,6 +12,7 @@ import styled from "styled-components";
 import "../styles/HambBurger.css";
 import { positions } from "@mui/system";
 import { AppBar, Toolbar } from "@mui/material";
+import { uuidv4 } from "@firebase/util";
 
 const pages = [
   { name: "Home", link: "#Main" },
@@ -85,7 +86,7 @@ display: none;
         }}
       >
         {pages.map((page) => (
-          <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+          <MenuItem key={uuidv4()} onClick={handleCloseNavMenu}>
             <Typography textAlign="center" fontSize="1.5em">
               <AncherLink href={page.link}>{page.name}</AncherLink>
             </Typography>

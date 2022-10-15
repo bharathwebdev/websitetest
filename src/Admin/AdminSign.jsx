@@ -13,9 +13,9 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {getAuth,signInWithEmailAndPassword} from  'firebase/auth'
-import { auth } from '../configsFiles/Firebase.config';
+
 import { Navigate, useNavigate } from 'react-router';
-import { useEffect } from 'react';
+
 import { toast } from 'react-toastify';
 import { UserContext } from './AdminContext';
 import { useContext } from 'react';

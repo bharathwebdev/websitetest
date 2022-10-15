@@ -4,9 +4,9 @@ import { db } from '../../configsFiles/Firebase.config'
 import { collection, getDocs, onSnapshot ,doc,getDoc, updateDoc} from "firebase/firestore";
 import { toast } from "react-toastify";
 import { Card, Typography } from '@mui/material';
-import QRcode from 'qrcode'
+
 import {QrReader} from "react-qr-reader";
-import {Button} from '@mui/material';
+
 import styled from 'styled-components';
 
 import Switch from '@mui/material/Switch';
